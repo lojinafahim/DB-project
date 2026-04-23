@@ -1,0 +1,101 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{86E2AA99-248E-447F-830E-66E63A4DD3B8}|WebApplication1\\WebApplication1.csproj|c:\\users\\lojin\\source\\repos\\webapplication1\\webapplication1\\submit_accidental.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{86E2AA99-248E-447F-830E-66E63A4DD3B8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\submit_accidental.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86E2AA99-248E-447F-830E-66E63A4DD3B8}|WebApplication1\\WebApplication1.csproj|C:\\Users\\lojin\\source\\repos\\WebApplication1\\webapplication1\\submit_medical.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{86E2AA99-248E-447F-830E-66E63A4DD3B8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\submit_medical.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86E2AA99-248E-447F-830E-66E63A4DD3B8}|WebApplication1\\WebApplication1.csproj|C:\\Users\\lojin\\source\\repos\\WebApplication1\\webapplication1\\submit_compensation.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{86E2AA99-248E-447F-830E-66E63A4DD3B8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\submit_compensation.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86E2AA99-248E-447F-830E-66E63A4DD3B8}|WebApplication1\\WebApplication1.csproj|C:\\Users\\lojin\\source\\repos\\WebApplication1\\webapplication1\\submit_unpaid.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{86E2AA99-248E-447F-830E-66E63A4DD3B8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\submit_unpaid.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86E2AA99-248E-447F-830E-66E63A4DD3B8}|WebApplication1\\WebApplication1.csproj|C:\\Users\\lojin\\source\\repos\\WebApplication1\\webapplication1\\dean_andhr_evaluation.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{86E2AA99-248E-447F-830E-66E63A4DD3B8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\dean_andhr_evaluation.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Submit_unpaid.aspx",
+              "DocumentMoniker": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\WebApplication1\\Submit_unpaid.aspx",
+              "RelativeDocumentMoniker": "WebApplication1\\Submit_unpaid.aspx",
+              "ToolTip": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\WebApplication1\\Submit_unpaid.aspx",
+              "RelativeToolTip": "WebApplication1\\Submit_unpaid.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-12-05T14:38:08.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Submit_compensation.aspx",
+              "DocumentMoniker": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\WebApplication1\\Submit_compensation.aspx",
+              "RelativeDocumentMoniker": "WebApplication1\\Submit_compensation.aspx",
+              "ToolTip": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\WebApplication1\\Submit_compensation.aspx",
+              "RelativeToolTip": "WebApplication1\\Submit_compensation.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-12-05T00:36:12.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dean_andHR_Evaluation.aspx",
+              "DocumentMoniker": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\WebApplication1\\Dean_andHR_Evaluation.aspx",
+              "RelativeDocumentMoniker": "WebApplication1\\Dean_andHR_Evaluation.aspx",
+              "ToolTip": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\WebApplication1\\Dean_andHR_Evaluation.aspx",
+              "RelativeToolTip": "WebApplication1\\Dean_andHR_Evaluation.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-12-05T00:37:13.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Submit_medical.aspx",
+              "DocumentMoniker": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\WebApplication1\\Submit_medical.aspx",
+              "RelativeDocumentMoniker": "WebApplication1\\Submit_medical.aspx",
+              "ToolTip": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\WebApplication1\\Submit_medical.aspx",
+              "RelativeToolTip": "WebApplication1\\Submit_medical.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-12-05T12:27:43.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Submit_accidental.aspx",
+              "DocumentMoniker": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\WebApplication1\\Submit_accidental.aspx",
+              "RelativeDocumentMoniker": "WebApplication1\\Submit_accidental.aspx",
+              "ToolTip": "C:\\Users\\lojin\\source\\repos\\WebApplication1\\WebApplication1\\Submit_accidental.aspx",
+              "RelativeToolTip": "WebApplication1\\Submit_accidental.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-12-05T00:35:52.201Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

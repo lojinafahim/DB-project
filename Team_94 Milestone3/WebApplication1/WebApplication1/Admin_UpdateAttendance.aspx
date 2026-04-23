@@ -1,0 +1,465 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_UpdateAttendance.aspx.cs" Inherits="WebApplication1.Admin_UpdateAttendance" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Update Attendance</title>
+    <style>
+        :root {
+            --admin-color: #e74c3c;
+            --admin-light: #ff6b6b;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --border: #e9ecef;
+            --success-color: #27ae60;
+            --input-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--admin-color), var(--admin-light));
+            color: white;
+            padding: 1.75rem 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .page-title i {
+            background: rgba(255, 255, 255, 0.2);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .logout-btn {
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .content {
+            padding: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Form Styling */
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            background: var(--input-bg);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--admin-color);
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+            background: white;
+        }
+
+        .form-input::placeholder {
+            color: #adb5bd;
+        }
+
+        /* Time format hint */
+        .time-hint {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+            font-style: italic;
+        }
+
+        /* Button Styling */
+        .action-btn {
+            background: var(--admin-color);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .action-btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Result Message */
+        .result-message {
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            border-radius: 10px;
+            font-weight: 500;
+            text-align: center;
+            display: none;
+            font-size: 1rem;
+        }
+
+        .result-message.success {
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid rgba(39, 174, 96, 0.2);
+            color: var(--success-color);
+            display: block;
+        }
+
+        .result-message.error {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.2);
+            color: var(--admin-color);
+            display: block;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(52, 152, 219, 0.05);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .info-title {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Current Date Display */
+        .date-display {
+            text-align: center;
+            color: var(--admin-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            padding: 0.75rem;
+            background: rgba(231, 76, 60, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(231, 76, 60, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 95%;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .content {
+                padding: 2rem;
+            }
+            
+            .header {
+                padding: 1.5rem 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                max-width: 100%;
+            }
+            
+            .header {
+                padding: 1.25rem;
+            }
+            
+            .page-title {
+                font-size: 1.5rem;
+            }
+            
+            .page-title i {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+            
+            .content {
+                padding: 1.75rem;
+            }
+            
+            .header-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .back-btn, .logout-btn {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-content">
+                    <h1 class="page-title">
+                        <i class="fas fa-clock"></i>
+                        Update Attendance
+                    </h1>
+                    <div class="header-actions">
+                        <a href="AdminDashboard.aspx" class="back-btn">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Dashboard
+                        </a>
+                        <a href="Home.aspx?logout=true" class="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="content">
+
+                
+                <!-- Current Date Display -->
+                <div class="date-display">
+                    <i class="fas fa-calendar-alt"></i>
+                    Today's Date: <%= DateTime.Now.ToString("dddd, MMMM dd, yyyy") %>
+                </div>
+
+                <div class="form-container">
+                    <!-- Employee ID -->
+                    <div class="form-group">
+                        <label class="form-label" for="<%= txtEmpId.ClientID %>">
+                            <i class="fas fa-id-card"></i> Employee ID
+                        </label>
+                        <asp:TextBox ID="txtEmpId" runat="server" 
+                            CssClass="form-input" 
+                            placeholder="Enter Employee ID"
+                            autocomplete="off" />
+                    </div>
+
+                    <!-- Check-in Time -->
+                    <div class="form-group">
+                        <label class="form-label" for="<%= txtCheckIn.ClientID %>">
+                            <i class="fas fa-sign-in-alt"></i> Check-in Time
+                        </label>
+                        <asp:TextBox ID="txtCheckIn" runat="server" 
+                            CssClass="form-input" 
+                            placeholder="HH:MM (24-hour format)"
+                            autocomplete="off" />
+                        <div class="time-hint">Example: 09:00 or 14:30</div>
+                    </div>
+
+                    <!-- Check-out Time -->
+                    <div class="form-group">
+                        <label class="form-label" for="<%= txtCheckOut.ClientID %>">
+                            <i class="fas fa-sign-out-alt"></i> Check-out Time
+                        </label>
+                        <asp:TextBox ID="txtCheckOut" runat="server" 
+                            CssClass="form-input" 
+                            placeholder="HH:MM (24-hour format)"
+                            autocomplete="off" />
+                        <div class="time-hint">Example: 17:00 or 18:45</div>
+                    </div>
+
+                    <!-- Update Button -->
+                    <asp:Button ID="btnUpdate" runat="server" Text="Update Attendance"
+                        OnClick="btnUpdate_Click" CssClass="action-btn" />
+
+                    <!-- Result Message -->
+                    <asp:Label ID="lblMsg" runat="server" CssClass="result-message"></asp:Label>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        // Update result display
+        document.addEventListener('DOMContentLoaded', function() {
+            const resultLabel = document.getElementById('<%= lblMsg.ClientID %>');
+            const resultText = resultLabel.textContent.trim();
+            
+            if (resultText) {
+                // Determine success or error based on text
+                if (resultText.toLowerCase().includes('success') || 
+                    resultText.toLowerCase().includes('updated') ||
+                    resultText.toLowerCase().includes('saved')) {
+                    resultLabel.className = 'result-message success';
+                } else if (resultText.toLowerCase().includes('error') || 
+                          resultText.toLowerCase().includes('failed') ||
+                          resultText.toLowerCase().includes('invalid')) {
+                    resultLabel.className = 'result-message error';
+                }
+                
+                resultLabel.style.display = 'block';
+                
+                // Clear form fields on success
+                if (resultLabel.className.includes('success')) {
+                    setTimeout(function() {
+                        document.getElementById('<%= txtEmpId.ClientID %>').value = '';
+                        document.getElementById('<%= txtCheckIn.ClientID %>').value = '';
+                        document.getElementById('<%= txtCheckOut.ClientID %>').value = '';
+                    }, 1000);
+                }
+            }
+            
+            // Add time format validation
+            const timeInputs = document.querySelectorAll('input[placeholder*="HH:MM"]');
+            timeInputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    const value = this.value.trim();
+                    if (value && !/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/.test(value)) {
+                        this.style.borderColor = '#e74c3c';
+                        this.style.boxShadow = '0 0 0 3px rgba(231, 76, 60, 0.1)';
+                    } else {
+                        this.style.borderColor = '';
+                        this.style.boxShadow = '';
+                    }
+                });
+            });
+            
+            // Focus on first input
+            document.getElementById('<%= txtEmpId.ClientID %>').focus();
+        });
+    </script>
+</body>
+</html>
