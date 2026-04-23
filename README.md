@@ -10,8 +10,6 @@ The University HR Management System is a three-milestone project that implements
 - **Milestone 2**: SQL Server database implementation with stored procedures, functions, and views
 - **Milestone 3**: ASP.NET web application with complete user interface and business logic
 
-Milestones 1,2 were team work while Milestone 3 was done individualy
-
 The system centralizes employee information, streamlines HR operations, and automates workflows for leave approvals, payroll generation, and performance monitoring across the university.
 
 ## System Architecture
@@ -64,8 +62,29 @@ The system centralizes employee information, streamlines HR operations, and auto
    - Press F5 or click Start to launch the web application
    - Opens in default browser at `http://localhost:[port]/`
 
+## Application Screenshots
 
-### Employee Component - Part 1 (My Implementation)
+
+### Home Page
+<img width="1912" height="908" alt="Screenshot 2026-04-23 124354" src="https://github.com/user-attachments/assets/e40f1803-7a99-480e-abe4-4d7feadefc4b" />
+
+
+
+### Employee Login
+<img width="1915" height="897" alt="Screenshot 2026-04-23 124444" src="https://github.com/user-attachments/assets/5d07bf6d-c4ed-4f81-9a27-392a24524e2b" />
+
+
+### Employee Dashboard
+
+<img width="1887" height="909" alt="Screenshot 2026-04-23 124504" src="https://github.com/user-attachments/assets/143d1c90-dc13-49ee-8c13-eaf9c7de0ef8" />
+
+
+### Performance View
+
+<img width="1884" height="899" alt="Screenshot 2026-04-23 124716" src="https://github.com/user-attachments/assets/52785488-d376-4873-bd9f-053eae043ac4" />
+
+
+## Employee Component - Part 1 (My Implementation)
 
 MY part handles the following employee functionalities:
 
@@ -88,8 +107,7 @@ MY part handles the following employee functionalities:
 - `AnnualLeave.aspx` - Annual leave application form
 - `LeaveStatus.aspx` - Check submitted leave request status
 
-
-### Login
+## Login
 
 **Admin Login:**
 - Navigate to Admin Login page
@@ -100,13 +118,36 @@ MY part handles the following employee functionalities:
 **Employee Login:**
 - Navigate to Employee Login page
 - Enter your Employee ID and Password from database
-ID: 1
-Password: 123
+- **ID: 1**
+- **Password: 123**
 
 **HR Login:**
 - Navigate to HR Login page
 - Enter your HR Employee ID and Password from database
 
+## Features
+
+✨ **Admin**
+- Employee management
+- Attendance tracking & initiation
+- Leave management
+- Holiday management
+- Performance tracking
+- Payroll processing
+
+✨ **Employee**
+- Personal dashboard
+- Performance viewing
+- Attendance tracking
+- Leave applications
+- Payroll viewing
+- Deduction tracking
+
+✨ **HR**
+- Leave approval management
+- Deduction processing
+- Payroll generation
+- Employee records management
 
 ## Project Structure & Team
 
@@ -152,5 +193,3 @@ Media Engineering and Technology
 ## License
 
 Academic Use Only - Course Project
-
-
